@@ -39,6 +39,9 @@ echo "REACT_APP_GIPHY_API_KEY=<YOUR-GIPHY-API-KEY>" >> .env
 npm start
 ```
 
+## Deployment
+Refer to the [Baseline Webpage README](https://github.com/Baseline-JS/baseline-webpage)
+
 ## Baseline
 
 If you would like to learn more about what we do please visit [Baseline](https://baselinejs.com/)
