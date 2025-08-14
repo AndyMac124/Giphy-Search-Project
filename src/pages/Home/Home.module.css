@@ -1,0 +1,87 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  padding: 0 10px;
+}
+
+.trending {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.home-logo img {
+  display: block;
+  margin: 40px auto 20px;
+  max-width: 500px;
+  height: auto;
+}
+
+/* Trending buttons grid */
+.trending-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 8px;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+/* Trending buttons styling */
+.trending-buttons-grid button {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  color: #555;
+  cursor: pointer;
+  transition: transform 0.15s, background-color 0.15s, border-color 0.15s;
+}
+
+.trending-buttons-grid button:hover {
+  background-color: #eee;
+  border-color: #ccc;
+  transform: scale(1.05);
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .trending-buttons-grid {
+    grid-template-columns: repeat(3, auto);
+    gap: 6px;
+  }
+
+  .home-logo img {
+    max-width: 300px;
+    margin: 30px auto 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .trending-buttons-grid {
+    grid-template-columns: repeat(2, auto);
+    gap: 5px;
+  }
+
+  .trending {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+
+  .home-logo img {
+    max-width: 200px;
+    margin: 20px auto 10px;
+  }
+
+  .trending-buttons-grid button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getGifById, Gif } from '../../services/giphy-api';
-import './View.css';
+import Header from '../../components/Header/Header';
+import styles from './View.module.css';
 
 const View: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [gif, setGif] = useState<Gif | null>(null);
   const [copiedGif, setCopiedGif] = useState(false);
   const [copiedPage, setCopiedPage] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!id) return;
@@ -28,13 +30,22 @@ const View: React.FC = () => {
     setTimeout(() => setCopiedPage(false), 1500);
   };
 
+  const handleBack = () => {
+    navigate(-1);
+  };
+
   if (!gif) return <p>Loading...</p>;
 
   return (
-    <div className="view-container">
+    <>
+    <Header />
+    <div className={styles['view-container']}>
+      <button className={styles['back-button']} onClick={handleBack}>
+        ← Back to Results
+      </button>
       <h1>{gif.title}</h1>
       <img src={gif.images.original.url} alt={gif.title} />
-      <div className="view-buttons">
+      <div className={styles['view-buttons']}>
         <button onClick={handleCopyGifLink}>
           {copiedGif ? 'Copied!' : 'Copy Giphy Link'}
         </button>
@@ -46,6 +57,7 @@ const View: React.FC = () => {
         </a>
       </div>
     </div>
+    </>
   );
 };
 

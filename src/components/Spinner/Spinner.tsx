@@ -1,5 +1,5 @@
 import React from 'react';
-import './Spinner.css';
+import styles from './Spinner.module.css';
 
 interface LoadingSpinnerProps {
   isLoading: boolean;
@@ -18,8 +18,8 @@ const Spinner: React.FC<LoadingSpinnerProps> = ({ isLoading, color = 'blue', siz
   };
 
   return (
-    <div className={`spinner-container ${size}`}>
-      <div className="spinner" style={spinnerStyle}></div>
+    <div className={`${styles['spinner-container']} ${styles[size]}`}>
+      <div className={styles.spinner} style={spinnerStyle}></div>
     </div>
   );
 };

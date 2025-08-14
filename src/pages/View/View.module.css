@@ -1,10 +1,9 @@
-/* src/pages/View/View.css */
-
 .view-container {
   max-width: 600px;
   margin: 40px auto;
   text-align: center;
   font-family: 'Arial', sans-serif;
+  padding: 0 10px;
 }
 
 .view-container h1 {
@@ -67,4 +66,44 @@
 .view-buttons button:disabled {
   background-color: #999;
   cursor: default;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.back-button:hover {
+  background-color: #dcdcdc;
+  transform: scale(1.05);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .view-container {
+    margin: 20px auto;
+  }
+
+  .view-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .view-buttons button,
+  .view-buttons a {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  .back-button {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
 }

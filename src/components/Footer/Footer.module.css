@@ -1,7 +1,17 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
 .footer {
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
   border-top: 1px solid #ccc;
   background-color: #f9f9f9;
   font-size: 14px;

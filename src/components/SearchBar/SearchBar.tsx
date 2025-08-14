@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { searchGifs, Gif } from '../../services/giphy-api';
 import Spinner from '../Spinner/Spinner';
-import './SearchBar.css';
+import styles from './SearchBar.module.css';
 
 interface SearchBarProps {
   initialQuery?: string;
 }
-
-  // TODO: (Andrew) Consider Filters
-  // TODO: (Andrew) Consider Autocomplete
-  // TODO: (Andrew) Consider Quick/Hot Topics
 
 const SearchBar: React.FC<SearchBarProps> = ({ initialQuery = '' }) => {
   const [query, setQuery] = useState(initialQuery);
@@ -23,8 +19,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ initialQuery = '' }) => {
 
     setLoading(true);
     try {
-      const gifs: Gif[] = await searchGifs(query, 25);
-      navigate('/results', { state: { gifs } });
+      const gifs: Gif[] = await searchGifs(query, 24);
+      navigate('/results', { state: { gifs, query } });
     } catch (err) {
       console.error(err);
     } finally {
@@ -33,8 +29,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ initialQuery = '' }) => {
   };
 
   return (
-    <div className="search-bar-container">
-      <form className="search-bar-form" onSubmit={handleSearch}>
+    <div className={styles['search-bar-container']}>
+      <form className={styles['search-bar-form']} onSubmit={handleSearch}>
         <input
           type="text"
           value={query}

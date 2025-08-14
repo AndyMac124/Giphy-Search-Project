@@ -1,10 +1,10 @@
 import React from 'react';
-import './Footer.css';
+import styles from './Footer.module.css';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer">
-      <p>&copy; {new Date().getFullYear()} Giphy Search App. All rights reserved.</p>
+    <footer className={styles.footer}>
+      <p>&copy; {new Date().getFullYear()} Andrew McKenzie</p>
       <p>
         Built with{' '}
         <a

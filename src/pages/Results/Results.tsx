@@ -2,10 +2,12 @@ import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Gif } from '../../services/giphy-api';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import './Results.css';
+import Header from '../../components/Header/Header';
+import styles from './Results.module.css';
 
 interface LocationState {
   gifs: Gif[];
+  query?: string;
 }
 
 const Results: React.FC = () => {
@@ -13,8 +15,8 @@ const Results: React.FC = () => {
   const navigate = useNavigate();
   const state = location.state as LocationState | undefined;
   const gifs = state?.gifs;
+  const query = state?.query;
 
-  // Redirect to home if no gifs
   useEffect(() => {
     if (!gifs) navigate('/');
   }, [gifs, navigate]);
@@ -26,14 +28,16 @@ const Results: React.FC = () => {
   };
 
   return (
-    <div className="results-container">
+    <>
+    <Header />
+    <div className={styles['results-container']}>
       <SearchBar />
-      <h1>Results</h1>
-      <div className="results-grid">
+      <h1>Top Results {query ? `for "${query}"` : ''}</h1>
+      <div className={styles['results-grid']}>
         {gifs.map((gif) => (
           <div
             key={gif.id}
-            className="results-grid-item"
+            className={styles['results-grid-item']}
             onClick={() => handleViewClick(gif.id)}
           >
             <img src={gif.images.original.url} alt={gif.title} />
@@ -41,6 +45,7 @@ const Results: React.FC = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

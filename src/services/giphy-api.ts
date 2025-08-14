@@ -17,7 +17,7 @@ export interface Gif {
 }
 
 // Search GIFs
-export const searchGifs = async (query: string, limit = 25): Promise<Gif[]> => {
+export const searchGifs = async (query: string, limit = 24): Promise<Gif[]> => {
   const response = await axios.get(`${BASE_URL}/search`, {
     params: {
     // eslint-disable-next-line camelcase
@@ -38,4 +38,13 @@ export const getGifById = async (id: string): Promise<Gif> => {
     params: { api_key: API_KEY },
   });
   return response.data.data;
+};
+
+// Get trending search terms
+export const getTrendingSearches = async (limit = 12): Promise<string[]> => {
+  const response = await axios.get('https://api.giphy.com/v1/trending/searches', {
+    // eslint-disable-next-line camelcase
+    params: { api_key: API_KEY },
+  });
+  return response.data.data.slice(0, limit);
 };
