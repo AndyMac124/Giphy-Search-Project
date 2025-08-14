@@ -7,32 +7,49 @@ import styles from './Results.module.css';
 import Spinner from '../../components/Spinner/Spinner';
 
 interface LocationState {
-  gifs: Gif[];
-  query?: string;
+  gifs: Gif[];      // Array of GIF objects to display
+  query?: string;   // Optional search query string
 }
 
+/**
+ * Results Component
+ * 
+ * Displays a grid of GIFs based on search results or trending terms.
+ * - Shows a spinner for each GIF while it is loading
+ * - Clicking a GIF navigates to the detailed view
+ * - Includes a search bar for new queries
+ */
 const Results: React.FC = () => {
+  // Access router location and navigation functions
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Retrieve GIFs and optional query from router state
   const state = location.state as LocationState | undefined;
   const gifs = state?.gifs;
   const query = state?.query;
 
+  // Track loading state for each individual GIF (id → boolean)
   const [loadingMap, setLoadingMap] = useState<Record<string, boolean>>({});
 
+  // Initialise loading map and redirect if no GIFs
   useEffect(() => {
-    if (!gifs) navigate('/');
-    else {
+    if (!gifs) {
+      navigate('/'); // Go back if no data
+    } else {
       const initialLoading: Record<string, boolean> = {};
-      gifs.forEach((gif) => (initialLoading[gif.id] = true));
+      gifs.forEach((gif) => (initialLoading[gif.id] = true)); // All GIFs start as loading
       setLoadingMap(initialLoading);
     }
   }, [gifs, navigate]);
 
+  // Navigate to the GIF detail page when a GIF is clicked
   const handleViewClick = (id: string) => navigate(`/view/${id}`);
 
+  // Show nothing while GIFs are unavailable
   if (!gifs) return null;
 
+  // Mark a GIF as loaded when its image finishes loading
   const handleImgLoad = (id: string) => {
     setLoadingMap((prev) => ({ ...prev, [id]: false }));
   };
@@ -40,9 +57,12 @@ const Results: React.FC = () => {
   return (
     <>
       <Header />
+
       <div className={styles['results-container']}>
         <SearchBar />
+
         <h1>Top Results {query ? `for "${query}"` : ''}</h1>
+
         <div className={styles['results-grid']}>
           {gifs.map((gif) => (
             <div
@@ -51,6 +71,7 @@ const Results: React.FC = () => {
               onClick={() => handleViewClick(gif.id)}
             >
               {loadingMap[gif.id] && <Spinner isLoading={true} />}
+
               <img
                 src={gif.images.original.url}
                 alt={gif.title}
