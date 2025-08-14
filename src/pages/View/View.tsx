@@ -3,12 +3,14 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getGifById, Gif } from '../../services/giphy-api';
 import Header from '../../components/Header/Header';
 import styles from './View.module.css';
+import Spinner from '../../components/Spinner/Spinner';
 
 const View: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [gif, setGif] = useState<Gif | null>(null);
   const [copiedGif, setCopiedGif] = useState(false);
   const [copiedPage, setCopiedPage] = useState(false);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -44,7 +46,15 @@ const View: React.FC = () => {
         ← Back to Results
       </button>
       <h1>{gif.title}</h1>
-      <img src={gif.images.original.url} alt={gif.title} />
+      <img
+        src={gif.images.original.url}
+        alt={gif.title}
+        style={{ display: loading ? 'none' : 'block' }}
+        onLoad={() => setLoading(false)}
+      />
+
+      {loading && <Spinner isLoading={loading} />}
+      
       <div className={styles['view-buttons']}>
         <button onClick={handleCopyGifLink}>
           {copiedGif ? 'Copied!' : 'Copy Giphy Link'}

@@ -7,13 +7,10 @@ interface LoadingSpinnerProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-const Spinner: React.FC<LoadingSpinnerProps> = ({ isLoading, color = 'blue', size = 'medium' }) => {
-  if (!isLoading) {
-    return null;
-  }
+const Spinner: React.FC<LoadingSpinnerProps> = ({ isLoading, color = '#3498db', size = 'medium' }) => {
+  if (!isLoading) return null;
 
   const spinnerStyle = {
-    borderColor: color,
     borderTopColor: color,
   };
 
