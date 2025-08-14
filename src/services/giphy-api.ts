@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-const API_KEY = 'Q6cWtmVDZ1xSx8glURHcaEc1qdk9HvTs';
+const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
+
+if (!API_KEY) {
+  console.warn('Missing Giphy API key!');
+}
+
 const BASE_URL = 'https://api.giphy.com/v1/gifs';
 
 export interface Gif {

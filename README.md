@@ -25,6 +25,15 @@ cd giphy-search-project
 npm install
 ```
 
+## Set up your Giphy API Key for local running
+
+First, ensure your working directory is `giphy-search-project`
+
+```BASH
+touch .env
+echo "REACT_APP_GIPHY_API_KEY=<YOUR-GIPHY-API-KEY>" >> .env
+```
+
 ## Run Locally
 ```BASH
 npm start
