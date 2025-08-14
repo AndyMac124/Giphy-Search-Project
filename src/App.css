@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: calc(10px + 2vmin);
   background: linear-gradient(50deg, #fff 0%, #f4900e 50%, #ffeda7 100%);
 }

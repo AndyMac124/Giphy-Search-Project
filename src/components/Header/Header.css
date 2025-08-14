@@ -1,0 +1,21 @@
+/* src/components/Header/Header.css */
+
+.header {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.header:hover h1 {
+  color: #007bff; /* changes color on hover */
+}
