@@ -12,7 +12,7 @@ export interface Gif {
   id: string;
   url: string; // Link to Giphy Page
   title: string;
-  embed_url: string; // For looping
+  embed_url: string; // For looping animation
   images: {
     original: {
       url: string; // Link to actual Giphy

@@ -20,10 +20,6 @@
   transition: transform 0.2s;
 }
 
-.view-container img:hover {
-  transform: scale(1.02);
-}
-
 .view-buttons {
   display: flex;
   justify-content: center;

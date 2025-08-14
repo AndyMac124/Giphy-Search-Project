@@ -1,10 +1,17 @@
 import React from 'react';
 import styles from './Footer.module.css';
 
+/**
+ * Footer component
+ * 
+ * Displays site footer with copyright information and a link
+ * to the Baseline.js project used in the application.
+ */
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <p>&copy; {new Date().getFullYear()} Andrew McKenzie</p>
+
       <p>
         Built with{' '}
         <a

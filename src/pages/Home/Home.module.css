@@ -17,11 +17,24 @@
   color: #333;
 }
 
+.home-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto 30px;
+  max-width: 450px;
+  background: linear-gradient(135deg, #ffb3d9, #a18cd1);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
 .home-logo img {
   display: block;
-  margin: 40px auto 20px;
-  max-width: 500px;
+  max-width: 100%;
   height: auto;
+  border-radius: 8px;
+  margin: 25px auto 25px;
 }
 
 /* Trending buttons grid */
@@ -51,7 +64,7 @@
   transform: scale(1.05);
 }
 
-/* Mobile adjustments */
+/* Tablet adjustments */
 @media (max-width: 900px) {
   .trending-buttons-grid {
     grid-template-columns: repeat(3, auto);
@@ -60,10 +73,11 @@
 
   .home-logo img {
     max-width: 300px;
-    margin: 30px auto 15px;
+    margin: 15px auto 15px;
   }
 }
 
+/* Mobile adjustments */
 @media (max-width: 600px) {
   .trending-buttons-grid {
     grid-template-columns: repeat(2, auto);
@@ -77,7 +91,7 @@
 
   .home-logo img {
     max-width: 200px;
-    margin: 20px auto 10px;
+    margin: 15px auto 15px;
   }
 
   .trending-buttons-grid button {

@@ -1,19 +1,39 @@
 .header {
-  text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   border-bottom: 1px solid #ccc;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #ffb3d9, #a18cd1); /* pink → purple */
   cursor: pointer;
-  font-family: Arial, sans-serif;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 2rem;
-  color: #333;
-  transition: color 0.2s;
+.home-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 20px;
+  max-width: 500px;
+  border-radius: 12px;
 }
 
-.header:hover h1 {
-  color: #007bff;
+.home-logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 25px auto 25px;
+}
+
+/* Tablet adjustments */
+@media (max-width: 900px) {
+  .home-logo img {
+    max-width: 300px;
+    margin: 15px auto 15px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .home-logo img {
+    max-width: 200px;
+    margin: 15px auto 15px;
+  }
 }
