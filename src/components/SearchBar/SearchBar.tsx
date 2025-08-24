@@ -44,8 +44,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ initialQuery = '' }) => {
   };
 
   return (
-    <div className={styles['search-bar-container']}>
-      <form className={styles['search-bar-form']} onSubmit={handleSearch}>
+    <div className={styles.searchBarContainer}>
+      <form className={styles.searchBarForm} onSubmit={handleSearch}>
         <input
           type="text"
           value={query}

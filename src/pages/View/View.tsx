@@ -68,9 +68,9 @@ const View: React.FC = () => {
   return (
     <>
       <Header />
-      <div className={styles['view-container']}>
+      <div className={styles.viewContainer}>
         
-        <button className={styles['back-button']} onClick={handleBack}>
+        <button className={styles.backButton} onClick={handleBack}>
           ← Back to Results
         </button>
 
@@ -85,7 +85,7 @@ const View: React.FC = () => {
 
         {loading && <Spinner isLoading={loading} />}
 
-        <div className={styles['view-buttons']}>
+        <div className={styles.viewButtons}>
           <button onClick={handleCopyGifLink}>
             {copiedGif ? 'Copied!' : 'Copy Giphy Link'}
           </button>

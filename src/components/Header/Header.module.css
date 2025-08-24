@@ -1,11 +1,11 @@
 .header {
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
-  background: linear-gradient(135deg, #ffb3d9, #a18cd1); /* pink → purple */
+  background: linear-gradient(135deg, #ffb3d9, #a18cd1);
   cursor: pointer;
 }
 
-.home-logo {
+.homeLogo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@
   border-radius: 12px;
 }
 
-.home-logo img {
+.homeLogo img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -24,7 +24,7 @@
 
 /* Tablet adjustments */
 @media (max-width: 900px) {
-  .home-logo img {
+  .homeLogo img {
     max-width: 300px;
     margin: 15px auto 15px;
   }
@@ -32,7 +32,7 @@
 
 /* Mobile adjustments */
 @media (max-width: 600px) {
-  .home-logo img {
+  .homeLogo img {
     max-width: 200px;
     margin: 15px auto 15px;
   }

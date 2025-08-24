@@ -25,7 +25,7 @@ const Spinner: React.FC<LoadingSpinnerProps> = ({ isLoading, color = '#3498db', 
   };
 
   return (
-    <div className={`${styles['spinner-container']} ${styles[size]}`}>
+    <div className={`${styles.spinnerContainer} ${styles[size]}`}>
       <div className={styles.spinner} style={spinnerStyle}></div>
     </div>
   );

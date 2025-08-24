@@ -1,4 +1,4 @@
-.home-container {
+.homeContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +17,7 @@
   color: #333;
 }
 
-.home-logo {
+.homeLogo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.home-logo img {
+.homeLogo img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -38,7 +38,7 @@
 }
 
 /* Trending buttons grid */
-.trending-buttons-grid {
+.trendingButtonsGrid {
   display: grid;
   grid-template-columns: repeat(4, auto);
   gap: 8px;
@@ -47,7 +47,7 @@
 }
 
 /* Trending buttons styling */
-.trending-buttons-grid button {
+.trendingButtonsGrid button {
   padding: 6px 12px;
   font-size: 0.85rem;
   border-radius: 20px;
@@ -58,7 +58,7 @@
   transition: transform 0.15s, background-color 0.15s, border-color 0.15s;
 }
 
-.trending-buttons-grid button:hover {
+.trendingButtonsGrid button:hover {
   background-color: #eee;
   border-color: #ccc;
   transform: scale(1.05);
@@ -66,12 +66,12 @@
 
 /* Tablet adjustments */
 @media (max-width: 900px) {
-  .trending-buttons-grid {
+  .trendingButtonsGrid {
     grid-template-columns: repeat(3, auto);
     gap: 6px;
   }
 
-  .home-logo img {
+  .homeLogo img {
     max-width: 300px;
     margin: 15px auto 15px;
   }
@@ -79,7 +79,7 @@
 
 /* Mobile adjustments */
 @media (max-width: 600px) {
-  .trending-buttons-grid {
+  .trendingButtonsGrid {
     grid-template-columns: repeat(2, auto);
     gap: 5px;
   }
@@ -89,12 +89,12 @@
     margin-top: 2rem;
   }
 
-  .home-logo img {
+  .homeLogo img {
     max-width: 200px;
     margin: 15px auto 15px;
   }
 
-  .trending-buttons-grid button {
+  .trendingButtonsGrid button {
     padding: 5px 10px;
     font-size: 0.8rem;
   }

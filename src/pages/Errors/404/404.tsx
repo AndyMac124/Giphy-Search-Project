@@ -12,7 +12,7 @@ import styles from './404.module.css';
  */
 const NotFound: React.FC = () => {
   return (
-    <div className={styles['notfound-container']}>
+    <div className={styles.notfoundContainer}>
       <h1>404</h1>
       <p>Oops! Page not found.</p>
       <Link to="/">Go Back Home</Link>

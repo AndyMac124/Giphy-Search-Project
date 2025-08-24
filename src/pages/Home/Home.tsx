@@ -48,9 +48,9 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className={styles['home-container']}>
+    <div className={styles.homeContainer}>
       
-      <div className={styles['home-logo']}>
+      <div className={styles.homeLogo}>
         <img src="/giphysearch.png" alt="Giphy Search Logo" />
       </div>
 
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
 
       <p className={styles.trending}>Trending Searches</p>
 
-      <div className={styles['trending-buttons-grid']}>
+      <div className={styles.trendingButtonsGrid}>
         {trending.map((term) => (
           <button key={term} onClick={() => handleTrendingClick(term)}>
             {term}

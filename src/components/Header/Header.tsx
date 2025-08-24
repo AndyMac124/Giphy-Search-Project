@@ -17,7 +17,7 @@ const Header: React.FC = () => {
       className={styles.header}
       onClick={() => navigate('/')}
     >
-      <div className={styles['home-logo']}>
+      <div className={styles.homeLogo}>
         <img src="/giphysearch.png" alt="Giphy Search Logo" />
       </div>
     </header>

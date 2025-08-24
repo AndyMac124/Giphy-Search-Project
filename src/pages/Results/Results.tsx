@@ -58,16 +58,16 @@ const Results: React.FC = () => {
     <>
       <Header />
 
-      <div className={styles['results-container']}>
+      <div className={styles.resultsContainer}>
         <SearchBar />
 
         <h1>Top Results {query ? `for "${query}"` : ''}</h1>
 
-        <div className={styles['results-grid']}>
+        <div className={styles.resultsGrid}>
           {gifs.map((gif) => (
             <div
               key={gif.id}
-              className={styles['results-grid-item']}
+              className={styles.resultsGridItem}
               onClick={() => handleViewClick(gif.id)}
             >
               {loadingMap[gif.id] && <Spinner isLoading={true} />}
